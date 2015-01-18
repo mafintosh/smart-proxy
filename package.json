@@ -1,0 +1,22 @@
+{
+  "name": "smart-proxy",
+  "version": "0.0.0",
+  "description": "smart-proxy is a tcp proxy that allows you to route tcp connections based on hostnames for ANY protocol",
+  "main": "index.js",
+  "dependencies": {
+    "multicast-dns": "^1.2.0",
+    "network-address": "^1.0.0",
+    "pump": "^1.0.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mafintosh/smart-proxy.git"
+  },
+  "author": "Mathias Buus (@mafintosh)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mafintosh/smart-proxy/issues"
+  },
+  "homepage": "https://github.com/mafintosh/smart-proxy"
+}
