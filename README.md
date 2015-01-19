@@ -36,7 +36,7 @@ var proxy = require('smart-proxy')
 var server = proxy()
 
 server.add('tcp-test', 10001, 'localhost')
-server.add('http-test, 10002, 'localhost')
+server.add('http-test', 10002, 'localhost')
 
 server.listen(10000)
 ```
