@@ -2,7 +2,10 @@ var net = require('net')
 var pump = require('pump')
 var network = require('network-address')
 var multicast = require('multicast-dns')
+var os = require('os')
 
+var osx = os.platform() === 'darwin'
+var limit = true ? 256 : 256*256*256
 var tick = 0
 
 module.exports = function() {
@@ -38,9 +41,15 @@ module.exports = function() {
   })
 
   var freeHost = function() {
-    for (var i = 0; i < 255; i++) { // TODO: generate 127.x.x.x as well etc
-      if (tick === 255) tick = 0
-      var host = '127.0.0.'+(++tick)
+    for (var i = 0; i < limit; i++) {
+      tick++
+      if (tick === limit) tick = 1
+
+      var a = (tick / 256 / 256) | 0
+      var b = ((tick % (256*256)) / 256) | 0
+      var c = tick % 256
+
+      var host = '127.'+a+'.'+b+'.'+c
       if (!hosts[host]) return host
     }
     return null
