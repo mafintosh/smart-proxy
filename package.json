@@ -1,6 +1,6 @@
 {
   "name": "smart-proxy",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "smart-proxy is a tcp proxy that allows you to route tcp connections based on hostnames for ANY protocol",
   "main": "index.js",
   "dependencies": {
