@@ -5,7 +5,7 @@ var multicast = require('multicast-dns')
 var os = require('os')
 
 var osx = os.platform() === 'darwin'
-var limit = true ? 256 : 256*256*256
+var limit = osx ? 256 : 256*256*256
 var tick = 0
 
 module.exports = function() {
